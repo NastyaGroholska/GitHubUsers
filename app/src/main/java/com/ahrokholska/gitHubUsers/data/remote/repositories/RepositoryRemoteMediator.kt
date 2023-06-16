@@ -12,13 +12,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
 @OptIn(ExperimentalPagingApi::class)
-class RepositoryRemoteMediator(
+class RepositoryRemoteMediator @Inject constructor(
     private val repositoryRemote: RepositoryAPI,
     private val repositoryLocal: UserDatabase,
-    private val userName: String
 ) : RemoteMediator<Int, RepositoryEntity>() {
+    lateinit var userName: String
+
     override suspend fun initialize(): InitializeAction = withContext(Dispatchers.IO) {
         if (repositoryLocal.getRepositoryDao.isEmpty(userName)) InitializeAction.LAUNCH_INITIAL_REFRESH else InitializeAction.SKIP_INITIAL_REFRESH
     }
