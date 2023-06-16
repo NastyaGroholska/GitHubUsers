@@ -6,6 +6,7 @@
     <dimen name="list_item_boarder_width">2dp</dimen>
     <dimen name="user_picture_size">100dp</dimen>
     <dimen name="user_picture_offset">20dp</dimen>
+    <dimen name="user_picture_boarder_width">5dp</dimen>
     <dimen name="button_icon_offset">8dp</dimen>
     <dimen name="button_padding">10dp</dimen>
     <dimen name="detailed_user_picture_size">200dp</dimen>
