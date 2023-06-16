@@ -48,6 +48,7 @@ fun UserItem(user: User, modifier: Modifier) {
         Text(
             text = user.login,
             textAlign = TextAlign.Center,
+            maxLines = 1,
             style = MaterialTheme.typography.headlineLarge,
             color = MaterialTheme.colorScheme.onPrimaryContainer,
             modifier = Modifier

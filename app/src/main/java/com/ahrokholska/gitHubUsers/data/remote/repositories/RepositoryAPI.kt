@@ -10,6 +10,6 @@ interface RepositoryAPI {
     @Headers("Accept: application/vnd.github+json")
     suspend fun getRepositoriesForUser(
         @Path("username") username: String,
-        @Query("page") page: Int
+        @Query("page") page: Int, @Query("sort") sort: String = "id"
     ): List<RepositoryDTO>
 }

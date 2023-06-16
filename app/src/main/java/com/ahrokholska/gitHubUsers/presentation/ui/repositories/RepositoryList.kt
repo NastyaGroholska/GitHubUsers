@@ -17,11 +17,15 @@ import com.ahrokholska.gitHubUsers.presentation.model.Repository
 import com.ahrokholska.gitHubUsers.presentation.utils.ListOfLazyPagingItems
 
 @Composable
-fun RepositoryList(repositories: LazyPagingItems<Repository>, modifier: Modifier) {
+fun RepositoryList(
+    repositories: LazyPagingItems<Repository>,
+    modifier: Modifier,
+    screenKey: String
+) {
     val itemMargin = dimensionResource(R.dimen.list_item_margin)
     val itemShape = RoundedCornerShape(dimensionResource(R.dimen.list_item_corner_radius))
     ListOfLazyPagingItems(
-        screenKey = "RepositoryList",
+        screenKey = screenKey,
         items = repositories,
         modifier = modifier
     ) { repository, index ->

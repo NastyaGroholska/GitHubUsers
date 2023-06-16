@@ -53,6 +53,7 @@ fun RepositoryScreen(
                             .weight(2f)
                     )
                     RepositoryList(
+                        screenKey = "RepositoryList$userName",
                         repositories = repositories,
                         modifier = Modifier
                             .weight(3f)
@@ -64,6 +65,7 @@ fun RepositoryScreen(
             else -> {
                 UserInfo(userName = userName, pictureURL = pictureURL, modifier = Modifier)
                 RepositoryList(
+                    screenKey = "RepositoryList$userName",
                     repositories = repositories,
                     modifier = Modifier.fillMaxSize()
                 )
