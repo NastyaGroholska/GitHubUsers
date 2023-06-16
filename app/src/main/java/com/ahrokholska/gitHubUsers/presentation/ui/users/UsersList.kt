@@ -18,10 +18,18 @@ import com.ahrokholska.gitHubUsers.presentation.model.User
 import com.ahrokholska.gitHubUsers.presentation.utils.ListOfLazyPagingItems
 
 @Composable
-fun UsersList(users: LazyPagingItems<User>, modifier: Modifier, onItemClick: (String) -> Unit) {
-    val itemMargin = dimensionResource(R.dimen.user_item_margin)
-    val itemShape = RoundedCornerShape(dimensionResource(R.dimen.user_item_corner_radius))
-    ListOfLazyPagingItems(users, modifier) { user, index ->
+fun UsersList(
+    users: LazyPagingItems<User>,
+    modifier: Modifier,
+    onItemClick: (String, String) -> Unit
+) {
+    val itemMargin = dimensionResource(R.dimen.list_item_margin)
+    val itemShape = RoundedCornerShape(dimensionResource(R.dimen.list_item_corner_radius))
+    ListOfLazyPagingItems(
+        screenKey = "UsersList",
+        items = users,
+        modifier = modifier
+    ) { user, index ->
         UserItem(
             user = user, modifier = Modifier
                 .fillMaxWidth()
@@ -32,12 +40,12 @@ fun UsersList(users: LazyPagingItems<User>, modifier: Modifier, onItemClick: (St
                 .clip(itemShape)
                 .background(MaterialTheme.colorScheme.primaryContainer)
                 .border(
-                    width = dimensionResource(R.dimen.user_item_boarder_width),
+                    width = dimensionResource(R.dimen.list_item_boarder_width),
                     color = MaterialTheme.colorScheme.outline,
                     shape = itemShape
                 )
                 .clickable {
-                    onItemClick(user.login)
+                    onItemClick(user.login, user.pictureURL)
                 }
         )
     }

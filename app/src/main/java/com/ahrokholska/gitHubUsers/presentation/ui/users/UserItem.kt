@@ -22,7 +22,7 @@ import com.ahrokholska.gitHubUsers.presentation.model.User
 @Composable
 fun UserItem(user: User, modifier: Modifier) {
     Row(
-        modifier = modifier.padding(dimensionResource(R.dimen.user_item_padding)),
+        modifier = modifier.padding(dimensionResource(R.dimen.list_item_padding)),
         verticalAlignment = Alignment.CenterVertically
     ) {
         AsyncImage(

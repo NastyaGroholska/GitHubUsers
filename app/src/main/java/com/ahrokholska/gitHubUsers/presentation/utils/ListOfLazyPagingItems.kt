@@ -15,6 +15,7 @@ import androidx.paging.compose.LazyPagingItems
 
 @Composable
 fun <T : Any> ListOfLazyPagingItems(
+    screenKey: String,
     items: LazyPagingItems<T>,
     modifier: Modifier,
     item: @Composable (T, Int) -> Unit
@@ -34,7 +35,7 @@ fun <T : Any> ListOfLazyPagingItems(
         if (items.loadState.refresh is LoadState.Loading) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         } else {
-            val state = rememberForeverLazyListState(key = "userList")
+            val state = rememberForeverLazyListState(key = screenKey)
 
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),

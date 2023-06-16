@@ -13,7 +13,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.paging.compose.collectAsLazyPagingItems
 
 @Composable
-fun UserScreen(viewModel: UserViewModel, onNavigateToUserRepositories: (String) -> Unit) {
+fun UserScreen(viewModel: UserViewModel, onNavigateToUserRepositories: (String,String) -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
         val users = viewModel.users.collectAsLazyPagingItems()
         Text(text = "Refresh all",

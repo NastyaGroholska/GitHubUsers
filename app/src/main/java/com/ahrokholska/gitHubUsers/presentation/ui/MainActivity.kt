@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
             GitHubUsersTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.inversePrimary
                 ) {
                     Navigation()
                 }

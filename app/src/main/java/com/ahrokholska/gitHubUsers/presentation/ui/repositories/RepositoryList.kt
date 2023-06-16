@@ -18,9 +18,13 @@ import com.ahrokholska.gitHubUsers.presentation.utils.ListOfLazyPagingItems
 
 @Composable
 fun RepositoryList(repositories: LazyPagingItems<Repository>, modifier: Modifier) {
-    val itemMargin = dimensionResource(R.dimen.user_item_margin)
-    val itemShape = RoundedCornerShape(dimensionResource(R.dimen.user_item_corner_radius))
-    ListOfLazyPagingItems(repositories, modifier) { repository, index ->
+    val itemMargin = dimensionResource(R.dimen.list_item_margin)
+    val itemShape = RoundedCornerShape(dimensionResource(R.dimen.list_item_corner_radius))
+    ListOfLazyPagingItems(
+        screenKey = "RepositoryList",
+        items = repositories,
+        modifier = modifier
+    ) { repository, index ->
         RepositoryItem(
             repository = repository, modifier = Modifier
                 .fillMaxWidth()
@@ -29,12 +33,13 @@ fun RepositoryList(repositories: LazyPagingItems<Repository>, modifier: Modifier
                     bottom = if (index == repositories.itemCount - 1) itemMargin else 0.dp
                 )
                 .clip(itemShape)
-                .background(MaterialTheme.colorScheme.primaryContainer)
+                .background(MaterialTheme.colorScheme.background.copy(alpha = 0.3f))
                 .border(
-                    width = dimensionResource(R.dimen.user_item_boarder_width),
+                    width = dimensionResource(R.dimen.list_item_boarder_width),
                     color = MaterialTheme.colorScheme.outline,
                     shape = itemShape
                 )
+                .padding(dimensionResource(R.dimen.list_item_padding))
         )
     }
 }

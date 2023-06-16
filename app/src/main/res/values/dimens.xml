@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="user_item_padding">20dp</dimen>
-    <dimen name="user_item_margin">10dp</dimen>
-    <dimen name="user_item_corner_radius">30dp</dimen>
-    <dimen name="user_item_boarder_width">2dp</dimen>
+    <dimen name="list_item_padding">20dp</dimen>
+    <dimen name="list_item_margin">10dp</dimen>
+    <dimen name="list_item_corner_radius">30dp</dimen>
+    <dimen name="list_item_boarder_width">2dp</dimen>
     <dimen name="user_picture_size">100dp</dimen>
     <dimen name="user_picture_offset">20dp</dimen>
-    <dimen name="scrollbar_size">10dp</dimen>
+    <dimen name="button_icon_offset">8dp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+    <dimen name="detailed_user_picture_size">200dp</dimen>
+    <dimen name="detailed_user_picture_padding">10dp</dimen>
+    <dimen name="repository_item_hole_size">20dp</dimen>
+    <dimen name="repository_item_elements_offset">20dp</dimen>
 </resources>
