@@ -1,7 +1,9 @@
 package com.ahrokholska.gitHubUsers.presentation.ui.users
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
+import androidx.paging.cachedIn
 import androidx.paging.map
 import com.ahrokholska.gitHubUsers.data.local.users.UserEntity
 import com.ahrokholska.gitHubUsers.domain.mappers.toUser
@@ -15,5 +17,5 @@ class UserViewModel @Inject constructor(pager: Pager<Int, UserEntity>) : ViewMod
         pagingData.map { entity ->
             entity.toUser()
         }
-    }
+    }.cachedIn(viewModelScope)
 }

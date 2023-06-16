@@ -2,9 +2,11 @@ package com.ahrokholska.gitHubUsers.presentation.ui.repositories
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
 import androidx.paging.map
 import com.ahrokholska.gitHubUsers.data.local.UserDatabase
 import com.ahrokholska.gitHubUsers.data.remote.repositories.RepositoryAPI
@@ -38,5 +40,5 @@ class RepositoryViewModel @Inject constructor(
         pagingData.map { entity ->
             entity.toRepository()
         }
-    }
+    }.cachedIn(viewModelScope)
 }
