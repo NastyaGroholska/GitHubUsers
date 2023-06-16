@@ -1,4 +1,4 @@
-package com.ahrokholska.gitHubUsers.ui.theme
+package com.ahrokholska.gitHubUsers.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

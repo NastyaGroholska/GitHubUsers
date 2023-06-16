@@ -1,4 +1,4 @@
-package com.ahrokholska.gitHubUsers.ui.theme
+package com.ahrokholska.gitHubUsers.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
